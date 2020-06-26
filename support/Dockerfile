@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PATH=/opt/chefdk/bin:/opt/chefdk/embedded/bin:/root/.chefdk/gem/ruby/2.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 # prereqs
 RUN apt-get update && \
-    apt-get install -y apt-transport-https ca-certificates curl software-properties-common wget ssh
+    apt-get install -y apt-transport-https ca-certificates curl gpg-agent software-properties-common wget ssh
 # install docker
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
